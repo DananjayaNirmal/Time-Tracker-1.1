@@ -26,7 +26,7 @@
 " id = "uName">
 
 <h5>Hi there! What’s your name?</h5>
-<input class = "mx-auto" type="text" id="" style = "border:none; outline:none; width:80%; height: 40px; border-radius:10px; background-color:#393653;">
+<input class = "mx-auto" type="text" id="vName" style = "border:none; outline:none; width:80%; height: 40px; border-radius:10px; background-color:#393653;">
 <button class = "btn btn-transparent btn-lg" style = "color:white" onclick = "showTaskName()"><i class="bi bi-arrow-right-circle"></i></button>
 
 </div>
@@ -34,7 +34,7 @@
 <div class = "mx-auto p-3 container text-light"  style = "width:40%; border-radius:10px; margin-top:10%; display: none;" id = "task">
 
 <h5>Give your task a name to begin tracking</h5>
-<input class = "mx-auto" type="text" style = "border:none; outline:none; width:80%; height: 40px; border-radius:10px; background-color:#393653;">
+<input class = "mx-auto" type="text" id = "vTask" style = "border:none; outline:none; width:80%; height: 40px; border-radius:10px; background-color:#393653;">
 <button class = "btn btn-transparent btn-lg text-light" onclick = "showTimer()"><i class="bi bi-arrow-right-circle"></i></button>
 
 </div>
@@ -59,9 +59,18 @@
 
 </div>
 
-<div class = "text-light fs-6">
+<div class = "text-light text-end fs-6">
 <hr>
-<p></p>
+<div style = "display:flex;">
+
+<div>
+<p><a href = "">My Logs</a></p>
+</div>
+<div>
+<p><a href = ""><i class="bi bi-gear-fill"></i></a></p>
+</div>
+
+</div>
 </div>
 
 </div>
