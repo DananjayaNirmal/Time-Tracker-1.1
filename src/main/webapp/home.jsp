@@ -13,8 +13,6 @@
  integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
  
- <script src="script.js"></script>
- 
 </head>
 <body style="background-color:#242041;">
 <!-- #242041  #484767 -->
@@ -52,7 +50,7 @@
 <!--div class="bg-body-tertiary p-2" style="--bs-bg-opacity: .25;"-->
 <div class="text-light text-sm-center">
 
-<h1>00.00.00</h1>
+<h1 id = "time">00.00.00</h1>
 <br>
 <span><button class = "btn btn-lg" style = "background-color:transparent;" id = "start"><i class="bi bi-play"></i></button></span>
 <button class = "btn btn-transparent btn-lg" id = "pause"><i class="bi bi-pause-fill"></i></button>
@@ -67,6 +65,6 @@
 </div>
 
 </div>
-
+ <script src="script.js"></script>
 </body>
 </html>
