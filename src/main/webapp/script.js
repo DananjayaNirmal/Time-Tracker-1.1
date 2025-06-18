@@ -1,3 +1,4 @@
+
 let interval = null;
 let milliSec = 0;
 
@@ -5,6 +6,7 @@ let nameDiv = document.getElementById("uName");
 let taskDiv = document.getElementById("task");
 let timerDiv = document.getElementById("timer");
 let timeElement = document.getElementById("time");
+let finalTime = document.getElementById("ftime");
 
 let nameElement = document.getElementById("vName");
 let taskElement = document.getElementById("vTask");
@@ -26,6 +28,7 @@ function showTaskName() {
   nameDiv.style.display = "none";
   taskDiv.style.display = "block";
 }
+
 
 function showTimer() {
 	
@@ -63,18 +66,15 @@ pauseBtn.addEventListener("click", pauseTimer);
 stopBtn.addEventListener("click", stopTimer);
 
 function startTimer(){
-	if(interval) return;
 	
 	interval = setInterval(timer, 1000);
 	//console.log("dana dana");
-
 	
 }
 
 function pauseTimer(){
 	
 	clearInterval(interval);
-	interval = null;
 	
 }
 
@@ -82,6 +82,23 @@ function stopTimer(){
 	
 	pauseTimer();
 	milliSec = 0;
+	//sendDetails();
+	
+	finalTime.value = interval;
 	
 }
+
+/*function sendDetails() {
+    fetch("/myLogs", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: "myParam=" + encodeURIComponent(interval)
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log("Response from servlet:", data);
+    });
+}*/
 

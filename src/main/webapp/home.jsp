@@ -50,12 +50,25 @@
 <!--div class="bg-body-tertiary p-2" style="--bs-bg-opacity: .25;"-->
 <div class="text-light text-sm-center">
 
+<div class = "row">
+<div class = "col">
+
 <h1 id = "time">00.00.00</h1>
 <br>
 <span><button class = "btn btn-lg" style = "background-color:transparent;" id = "start"><i class="bi bi-play"></i></button></span>
 <button class = "btn btn-transparent btn-lg" id = "pause"><i class="bi bi-pause-fill"></i></button>
-<button class = "btn btn-transparent btn-lg" id = "stop"><i class="bi bi-stop-fill"></i></button>
 
+</div>
+
+<div class = "col">
+
+<form action = "user/myLogs">
+<input type = "hidden" name = "ftime" id = "ftime">
+<button class = "btn btn-transparent btn-lg" id = "stop"><i class="bi bi-stop-fill"></i></button>
+</form>
+
+</div>
+</div>
 
 </div>
 
@@ -67,7 +80,7 @@
 <p><a href = "">My Logs</a></p>
 </div>
 <div>
-<p><a href = ""><i class="bi bi-gear-fill"></i></a></p>
+<p><i class="bi bi-gear-fill"></i></p>
 </div>
 
 </div>
