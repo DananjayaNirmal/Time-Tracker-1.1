@@ -15,7 +15,7 @@ let startBtn = document.getElementById("start");
 let pauseBtn = document.getElementById("pause");
 let stopBtn = document.getElementById("stop");
 
-function showTaskName() {
+/*function showTaskName() {
 	
 	//check user name is null before showing "Enter Task Name field"
 	if(nameElement.value.trim() === ""){
@@ -27,7 +27,7 @@ function showTaskName() {
 	
   nameDiv.style.display = "none";
   taskDiv.style.display = "block";
-}
+}*/
 
 
 function showTimer() {
@@ -56,7 +56,8 @@ function timer(){
 	if (minutes < 10) minutes = '0' + minutes;
 	if (seconds < 10) seconds = '0' + seconds;
 	
-	timeElement.innerText = `${hours}:${minutes}:${seconds}`;
+	
+	timeElement.innerText = `${hours} : ${minutes} : ${seconds}`;
 	//console.log("dana");
 
 }

@@ -34,7 +34,7 @@ public class WorkSessionController extends HttpServlet {
 			
 			int timeDuration = Integer.parseInt(request.getParameter("ftime"));
 			//System.out.println(timeDuration);
-		   
+			response.sendRedirect ("myLogs.jsp");
 			
 		}
 		

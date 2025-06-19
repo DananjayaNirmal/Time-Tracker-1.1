@@ -14,79 +14,71 @@
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
  
 </head>
-<body style="background-color:#242041;">
-<!-- #242041  #484767 -->
+<body>
 
-<div class = "text-light text-md-center mt-2" style = "display: none;">
-<h3>TT+</h3>
-<h6>Track Time, Plus Productivity</h6>
-</div>
-
-<div class = "mx-auto p-3 container text-light"  style = "width:40%; border-radius:10px; margin-top:10%; display: block;
-" id = "uName">
-
-<h5>Hi there! What’s your name?</h5>
-<input class = "mx-auto" type="text" id="vName" style = "border:none; outline:none; width:80%; height: 40px; border-radius:10px; background-color:#393653;">
-<button class = "btn btn-transparent btn-lg" style = "color:white" onclick = "showTaskName()"><i class="bi bi-arrow-right-circle"></i></button>
-
-</div>
-
-<div class = "mx-auto p-3 container text-light"  style = "width:40%; border-radius:10px; margin-top:10%; display: none;" id = "task">
-
-<h5>Give your task a name to begin tracking</h5>
-<input class = "mx-auto" type="text" id = "vTask" style = "border:none; outline:none; width:80%; height: 40px; border-radius:10px; background-color:#393653;">
-<button class = "btn btn-transparent btn-lg text-light" onclick = "showTimer()"><i class="bi bi-arrow-right-circle"></i></button>
-
-</div>
+<!--div style="background:linear-gradient(#08001f, #30197d); width:100%; min-height:100vh;"-->
+<div style="background:linear-gradient(70deg, #dbeafe, #ffffff); width:100%; min-height:100vh;">
 
 
-<div class = "bg-light bg-opacity-10 mx-auto p-3 container"  style = "width:40%; border-radius:10px; margin-top:10%; display: none;" id = "timer">
-
-<div class = "text-light fs-6">
-<p>17 th Tuesday 2025</p>
-
-</div>
-
-<!--div class="bg-body-tertiary p-2" style="--bs-bg-opacity: .25;"-->
-<div class="text-light text-sm-center">
-
-<div class = "row">
-<div class = "col">
-
-<h1 id = "time">00.00.00</h1>
-<br>
-<span><button class = "btn btn-lg" style = "background-color:transparent;" id = "start"><i class="bi bi-play"></i></button></span>
-<button class = "btn btn-transparent btn-lg" id = "pause"><i class="bi bi-pause-fill"></i></button>
-
-</div>
-
-<div class = "col">
-
-<form action = "user/myLogs">
-<input type = "hidden" name = "ftime" id = "ftime">
-<button class = "btn btn-transparent btn-lg" id = "stop"><i class="bi bi-stop-fill"></i></button>
-</form>
-
-</div>
-</div>
-
-</div>
-
-<div class = "text-light text-end fs-6">
-<hr>
-<div style = "display:flex;">
-
-<div>
-<p><a href = "">My Logs</a></p>
-</div>
-<div>
-<p><i class="bi bi-gear-fill"></i></p>
-</div>
+	<div class = "mt-4 text-light" style = "width:40%; position:absolute; top:30%; left:30%; display:block;" id = "task">
+	
+		<h5 style = "color: #000000;">Give your task a name to begin tracking</h5><br>
+		<input class = "mx-auto" type="text" id = "vTask" style = "border:none; outline:none; width:80%; height: 40px; border-radius:10px; background-color:#15317E; color:#fff;">
+		<button class = "btn btn-transparent btn-lg text-light" onclick = "showTimer()"><i class="bi bi-arrow-right-circle text-secondary"></i></button>
+		
+	</div>
+		
+		
+	<div class = "bg-opacity-8"  style = "width:40%; height:20%; position:absolute; top:30%; left:30%; background-color:#15317E; border-radius:10px; display:none;" id = "timer">
+		
+		
+		<div class = "mt-4 text-light" style = "width:100%; height:100%; text-align:center;">
+		
+		<h1 id = "time">00 : 00 : 00</h1>
+		
+		</div>
+		
+		<div style = "text-align:center;" class = "row">
+		
+			<div class = "col">
+			
+			<button class = "btn btn-lg" style = "background-color:transparent;" id = "start"><i class="bi bi-play-fill fs-4"></i></button>
+			
+			</div>
+			
+			<div class = "col">
+			
+			<button class = "btn btn-transparent btn-lg" id = "pause"><i class="bi bi-pause-fill fs-4"></i></button>
+			
+			</div>
+			
+			<div class = "col">
+			
+				<form action = "user/myLogs">
+				
+				<input type = "hidden" name = "ftime" id = "ftime">
+				<button class = "btn btn-transparent btn-lg" id = "stop"><i class="bi bi-stop-fill fs-4"></i></button>
+				
+				</form>
+		
+		</div>
+		
+		</div>
+		
+			<br>
+		
+		<div>
+		
+			<a href = "" style = "text-decoration:none; color:#15317E;"><i class="bi bi-clipboard-data-fill"></i> My Logs </a>
+		
+		</div>
+		
+	
+	</div>
 
 </div>
-</div>
 
-</div>
- <script src="script.js"></script>
+<script src="script.js"></script>
+ 
 </body>
 </html>
