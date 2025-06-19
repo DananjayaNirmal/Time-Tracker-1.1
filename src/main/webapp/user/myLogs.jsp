@@ -15,22 +15,36 @@
  
 
 </head>
-<body style = "background:linear-gradient(70deg, #dbeafe, #ffffff);">
+<body style = "background-color:#dbeafe;">
 
 <main class = "">
-	<div class = "" style = "background-color:#ffffff; min-height: 600px; margin:45px 45px 45px 45px">
+	<div class = "" style = "background-color:#ffffff; min-height: 600px; margin:45px 45px 45px 45px; border-radius:10px;">
 	
 		<div style = "background-color:;">
 		
-		Dana
-		
+			<ul class="nav nav-tabs">
+			  <li class="nav-item">
+			    <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-x-lg"></i></a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" href="#">My Logs</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" href="#">Settings</a>
+			  </li>
+			  
+			</ul>
+			
 		</div>
 		
-		<div class = "">
+		<!--div>
 		
-		Dana
+			<div class = "text-#15317E; text-md mt-2">
+			<h3>TT+</h3>Add commentMore actions
+			<h6>Track Time, Plus Productivity</h6>
+			</div>
 		
-		</div>
+		</div-->
 	
 	</div>
 </main>

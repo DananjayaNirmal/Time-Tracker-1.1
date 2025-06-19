@@ -29,7 +29,7 @@
 	</div>
 		
 		
-	<div style = " box-shadow: 0 4px 8px rgba(21, 48, 125, 0.4); width:40%; height:20%; position:absolute;
+	<div style = " box-shadow: 0 4px 8px rgba(21, 48, 125, 0.4); width:50%; height:20%; position:absolute;
 	              top:30%; left:30%; background-color:#15317E; border-radius:10px; display:none;" id = "timer">
 		
 		
