@@ -15,27 +15,24 @@
  
 
 </head>
-<body style = "background-color:#fff;">
+<body style = "background:linear-gradient(70deg, #dbeafe, #ffffff);">
 
 <main class = "">
-
-
-<div class = "" style = "background-color:#ebebeb; min-height: 600px; margin:45px 45px 45px 45px">
-
-<div style = "background-color:;">
-
-Dana
-
-</div>
-
-<div class = "">
-
-Dana
-
-</div>
-
-</div>
-
+	<div class = "" style = "background-color:#ffffff; min-height: 600px; margin:45px 45px 45px 45px">
+	
+		<div style = "background-color:;">
+		
+		Dana
+		
+		</div>
+		
+		<div class = "">
+		
+		Dana
+		
+		</div>
+	
+	</div>
 </main>
 
 

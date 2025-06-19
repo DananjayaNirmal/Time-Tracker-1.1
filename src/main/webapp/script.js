@@ -5,7 +5,9 @@ let milliSec = 0;
 let nameDiv = document.getElementById("uName");
 let taskDiv = document.getElementById("task");
 let timerDiv = document.getElementById("timer");
-let timeElement = document.getElementById("time");
+let timeElementHrs = document.getElementById("htime");
+let timeElementMin = document.getElementById("mtime");
+let timeElementSec = document.getElementById("stime");
 let finalTime = document.getElementById("ftime");
 
 let nameElement = document.getElementById("vName");
@@ -57,7 +59,9 @@ function timer(){
 	if (seconds < 10) seconds = '0' + seconds;
 	
 	
-	timeElement.innerText = `${hours} : ${minutes} : ${seconds}`;
+	timeElementHrs.innerText = `${hours}`;
+	timeElementMin.innerText = `${minutes}`;
+	timeElementSec.innerText = `${seconds}`;
 	//console.log("dana");
 
 }
@@ -69,7 +73,7 @@ stopBtn.addEventListener("click", stopTimer);
 function startTimer(){
 	
 	interval = setInterval(timer, 1000);
-	//console.log("dana dana");
+	console.log("dana dana, checking start btn is working?");
 	
 }
 

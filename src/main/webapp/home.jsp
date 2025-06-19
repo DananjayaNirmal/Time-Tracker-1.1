@@ -29,12 +29,34 @@
 	</div>
 		
 		
-	<div class = "bg-opacity-8"  style = "width:40%; height:20%; position:absolute; top:30%; left:30%; background-color:#15317E; border-radius:10px; display:none;" id = "timer">
+	<div style = " box-shadow: 0 4px 8px rgba(21, 48, 125, 0.4); width:40%; height:20%; position:absolute;
+	              top:30%; left:30%; background-color:#15317E; border-radius:10px; display:none;" id = "timer">
 		
 		
-		<div class = "mt-4 text-light" style = "width:100%; height:100%; text-align:center;">
+		<div class = "mt-4 text-light row" style = "width:100%; height:100%; text-align:center;">
 		
-		<h1 id = "time">00 : 00 : 00</h1>
+		
+			<div class = "col">
+			<h1 id = "htime">00</h1>
+			</div>
+			
+			<div class = "col">
+			<h1>:</h1>
+			</div>
+			
+			<div class = "col">
+			<h1 id = "mtime">00</h1>
+			</div>
+			
+			<div class = "col">
+			<h1>:</h1>
+			</div>
+			
+			<div class = "col">
+			<h1 id = "stime">00</h1>
+			</div>
+			
+			
 		
 		</div>
 		
