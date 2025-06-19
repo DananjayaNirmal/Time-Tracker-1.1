@@ -1,6 +1,6 @@
 
 let interval = null;
-let milliSec = 0;
+let timeInSec = 0;
 
 let nameDiv = document.getElementById("uName");
 let taskDiv = document.getElementById("task");
@@ -48,11 +48,11 @@ function showTimer() {
 
 function timer(){
 	
-	milliSec++;
+	timeInSec++;
 	
-	let hours = Math.floor(milliSec / 3600);
-	let minutes = Math.floor((milliSec - (hours * 3600)) / 60);
-	let seconds = milliSec % 60;
+	let hours = Math.floor(timeInSec / 3600);
+	let minutes = Math.floor((timeInSec - (hours * 3600)) / 60);
+	let seconds = timeInSec % 60;
 	
 	if (hours < 10) hours = '0' + hours;
 	if (minutes < 10) minutes = '0' + minutes;
@@ -73,7 +73,7 @@ stopBtn.addEventListener("click", stopTimer);
 function startTimer(){
 	
 	interval = setInterval(timer, 1000);
-	console.log("dana dana, checking start btn is working?");
+	//console.log("dana dana, checking start btn is working?");
 	
 }
 
@@ -86,11 +86,11 @@ function pauseTimer(){
 function stopTimer(){
 	
 	pauseTimer();
-	milliSec = 0;
+	
 	//sendDetails();
-	
-	finalTime.value = interval;
-	
+	console.log("::" + interval);
+	finalTime.value = timeInSec;
+	timeInSec = 0;
 }
 
 /*function sendDetails() {
