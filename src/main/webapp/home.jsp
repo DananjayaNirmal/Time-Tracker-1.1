@@ -23,6 +23,16 @@
 		font-weight: 500;
  }
  
+ .grow-button:hover {
+ 
+  		transform: scale(1.7);  
+ }
+
+.grow-button {
+      
+	     transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+ 
  </style>
  
 </head>
@@ -35,10 +45,10 @@
 	<div class = "mt-4" style = "width:40%; position:absolute; top:30%; left:30%; display:block;" id = "task">
 	
 		<h5 style = "color: #15317E;">Give your task a name to begin tracking</h5><br>
-		<form action = "user/storeDetails">
+		<!--form action = "user/storeDetails"-->
 		<input class = "mx-auto" type="text" id = "vTask" style = " box-shadow: 0 4px 8px rgba(21, 48, 125, 0.4); border:none; outline:none; width:80%; height: 40px; border-radius:10px; background-color:#fff; color:#15317E;">
 		<button class = "btn btn-transparent btn-lg text-light" onclick = "showTimer()"><i class="bi bi-arrow-right-circle text-secondary"></i></button>
-		</form>
+		<!--/form-->
 		
 	</div>
 		
@@ -78,13 +88,13 @@
 		
 			<div class = "col">
 			
-			<button class = "btn btn-lg" style = "background-color:transparent;" id = "start"><i class="bi bi-play-fill fs-4"></i></button>
+			<button class = "btn btn-lg grow-button " style = "background-color:transparent;" id = "start"><i class="bi bi-play-fill fs-4"></i></button>
 			
 			</div>
 			
 			<div class = "col">
 			
-			<button class = "btn btn-transparent btn-lg" id = "pause"><i class="bi bi-pause-fill fs-4"></i></button>
+			<button class = "btn btn-transparent btn-lg grow-button" id = "pause"><i class="bi bi-pause-fill fs-4"></i></button>
 			
 			</div>
 			
@@ -93,7 +103,7 @@
 				<form action = "user/storeDetails">
 				
 				<input type = "hidden" name = "ftime" id = "ftime">
-				<button class = "btn btn-transparent btn-lg" id = "stop"><i class="bi bi-stop-fill fs-4"></i></button>
+				<button class = "btn btn-transparent btn-lg grow-button" id = "stop"><i class="bi bi-stop-fill fs-4"></i></button>
 				
 				</form>
 		

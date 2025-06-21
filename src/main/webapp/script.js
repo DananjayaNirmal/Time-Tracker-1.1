@@ -11,7 +11,7 @@ let timeElementSec = document.getElementById("stime");
 let finalTime = document.getElementById("ftime");
 
 let nameElement = document.getElementById("vName");
-let taskName = document.getElementById("vTask");
+let taskElement = document.getElementById("vTask");
 
 let startBtn = document.getElementById("start");
 let pauseBtn = document.getElementById("pause");
@@ -27,13 +27,13 @@ let stopBtn = document.getElementById("stop");
 		
 	}
 	
-  nameDiv.style.display = "none";
+  nameDiv.style.displa- = "none";
   taskDiv.style.display = "block";
 }*/
 
 
 function showTimer() {
-	
+	console.log("error_21_6");
 	//check task name is null before showing the timer
 	if(taskElement.value.trim() === ""){
 			
