@@ -72,13 +72,12 @@
 	
 	    				<div class="taskBox">
 	        
-	         
-	            		<h4 style = "color:#106cff;"><c:out value="${tasklist.timeDuration }"></c:out></h4>
-			            <p>task name : <c:out value="${tasklist.id }"></c:out></p>
-			            <p>duration : <c:out value="${tasklist.coffeeCount }"></c:out></p>
-			            <p>date : <c:out value="${tasklist.date}"></c:out></p>
+	         			<h6 style = "color:#106cff;"><c:out value="${tasklist.taskName}"></c:out></h6>
+	            		<h6>Time duration: <c:out value="${tasklist.timeDuration }"></c:out></h6>
+			            <h6>Date : <c:out value="${tasklist.date }"></c:out></h6>
+			            <h6 style = "display: none;">id : <c:out value="${tasklist.id}"></c:out></h6>
 			                 
-						<a href="deleteTask?id=<c:out value='${tasklist.id}'/>" style = "color:red; text-decoration:none;"> Delete </a>
+						<a href="deleteTask?id=<c:out value='${tasklist.id}'/>" style = "text-decoration:none;"> <i class="bi bi-trash-fill text-danger"></i></a>
 			                
 	            
 	    				</div>

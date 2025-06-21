@@ -11,7 +11,7 @@ let timeElementSec = document.getElementById("stime");
 let finalTime = document.getElementById("ftime");
 
 let nameElement = document.getElementById("vName");
-let taskElement = document.getElementById("vTask");
+let taskName = document.getElementById("vTask");
 
 let startBtn = document.getElementById("start");
 let pauseBtn = document.getElementById("pause");
@@ -41,7 +41,7 @@ function showTimer() {
 			return;
 			
 		}
-	
+				
   taskDiv.style.display = "none";
   timerDiv.style.display = "block";
 }

@@ -35,8 +35,10 @@
 	<div class = "mt-4" style = "width:40%; position:absolute; top:30%; left:30%; display:block;" id = "task">
 	
 		<h5 style = "color: #15317E;">Give your task a name to begin tracking</h5><br>
+		<form action = "user/storeDetails">
 		<input class = "mx-auto" type="text" id = "vTask" style = " box-shadow: 0 4px 8px rgba(21, 48, 125, 0.4); border:none; outline:none; width:80%; height: 40px; border-radius:10px; background-color:#fff; color:#15317E;">
 		<button class = "btn btn-transparent btn-lg text-light" onclick = "showTimer()"><i class="bi bi-arrow-right-circle text-secondary"></i></button>
+		</form>
 		
 	</div>
 		

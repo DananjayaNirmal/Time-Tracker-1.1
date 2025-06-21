@@ -7,21 +7,36 @@ public class WorkSession {
 	private int timeDuration;
 	private String date;
 	private int coffeeCount;
+	private String taskName;
 	
 
-	public WorkSession(int id, int timeDuration, String date, int coffeeCount) {
+	public WorkSession(int id, int timeDuration, String date, int coffeeCount, String taskName) {
 		super();
 		this.id = id;
 		this.timeDuration = timeDuration;
 		this.date = date;
 		this.coffeeCount = coffeeCount;
+		this.taskName = taskName;
 	}
+
 
 	@Override
 	public String toString() {
 		return "WorkSession [id=" + id + ", timeDuration=" + timeDuration + ", date=" + date + ", coffeeCount="
-				+ coffeeCount + "]";
+				+ coffeeCount + ", taskName=" + taskName + "]";
 	}
+
+
+
+	public String getTaskName() {
+		return taskName;
+	}
+
+
+	public void setTaskName(String taskName) {
+		this.taskName = taskName;
+	}
+
 
 	public int getId() {
 		return id;

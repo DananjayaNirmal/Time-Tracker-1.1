@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet(urlPatterns = {"/user/storeDetails", "/user/myLogs"})
+@WebServlet(urlPatterns = {"/user/storeDetails", "/user/myLogs", "/user/deleteTask"})
 
 public class WorkSessionController extends HttpServlet {
 	
@@ -34,10 +34,25 @@ public class WorkSessionController extends HttpServlet {
 						showDetails(request, response);
 						break;	
 						
+						case "/user/deleteTask":
+							deleteTask(request, response);
+							break;	
+						
 					}
 				}
 		
 		
+		private void deleteTask(HttpServletRequest request, HttpServletResponse response) throws IOException {
+			
+			int id = Integer.parseInt(request.getParameter("id"));
+			
+			dao.deleteTask(id);
+				
+			response.sendRedirect ("myLogs");
+			
+		}
+
+
 		private void showDetails(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			
 			List<WorkSession> ws = new ArrayList<>();

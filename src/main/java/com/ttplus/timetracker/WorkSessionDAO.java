@@ -54,8 +54,9 @@ public class WorkSessionDAO {
 				int timeDuration = rs.getInt("timeDuration");
 				String date = rs.getString("date");
 				int coffeeCount = rs.getInt("coffeeCount");
+				String taskName = rs.getString("taskName");
 				
-				ws.add(new WorkSession(id, timeDuration, date, coffeeCount));
+				ws.add(new WorkSession(id, timeDuration, date, coffeeCount, taskName));
 			}
 			
 		}catch(Exception e){
@@ -65,6 +66,23 @@ public class WorkSessionDAO {
 		}
 
 		return ws;
+	}
+
+	public void deleteTask(int id) {
+		
+		try {
+			Connection con = dbConnection();
+			String query = "Delete From userdetails Where id = ?";
+			PreparedStatement ps = con.prepareStatement(query);
+			
+			ps.setInt(1, id);
+			ps.executeUpdate();
+			
+		}catch(Exception e) {
+			
+			e.printStackTrace();
+		}
+		
 	}
 }
 	
