@@ -1,7 +1,12 @@
 package com.ttplus.timetracker;
 
 import java.sql.Connection;
+
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class WorkSessionDAO {
 	
@@ -30,6 +35,36 @@ public class WorkSessionDAO {
 		
 		return con;
 		
+	}
+
+	public List<WorkSession> getDetails() {
+		
+		List<WorkSession> ws = new ArrayList<>();
+		
+		String query = "SELECT * FROM userdetails";
+
+		try {
+			Connection con = dbConnection();
+			PreparedStatement ps = con.prepareStatement(query);
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				
+				int id = rs.getInt("id");
+				int timeDuration = rs.getInt("timeDuration");
+				String date = rs.getString("date");
+				int coffeeCount = rs.getInt("coffeeCount");
+				
+				ws.add(new WorkSession(id, timeDuration, date, coffeeCount));
+			}
+			
+		}catch(Exception e){
+			
+			e.printStackTrace();
+			
+		}
+
+		return ws;
 	}
 }
 	

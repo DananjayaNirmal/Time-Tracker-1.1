@@ -13,6 +13,18 @@
  integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
  
+ <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+ 
+ <style>
+ 
+ .time{
+ 
+		font-size: 4rem;
+		font-weight: 500;
+ }
+ 
+ </style>
+ 
 </head>
 <body>
 
@@ -20,40 +32,40 @@
 <div style="background:linear-gradient(70deg, #dbeafe, #ffffff); width:100%; min-height:100vh;">
 
 
-	<div class = "mt-4 text-light" style = "width:40%; position:absolute; top:30%; left:30%; display:block;" id = "task">
+	<div class = "mt-4" style = "width:40%; position:absolute; top:30%; left:30%; display:block;" id = "task">
 	
-		<h5 style = "color: #000000;">Give your task a name to begin tracking</h5><br>
-		<input class = "mx-auto" type="text" id = "vTask" style = "border:none; outline:none; width:80%; height: 40px; border-radius:10px; background-color:#15317E; color:#fff;">
+		<h5 style = "color: #15317E;">Give your task a name to begin tracking</h5><br>
+		<input class = "mx-auto" type="text" id = "vTask" style = " box-shadow: 0 4px 8px rgba(21, 48, 125, 0.4); border:none; outline:none; width:80%; height: 40px; border-radius:10px; background-color:#fff; color:#15317E;">
 		<button class = "btn btn-transparent btn-lg text-light" onclick = "showTimer()"><i class="bi bi-arrow-right-circle text-secondary"></i></button>
 		
 	</div>
 		
 		
-	<div style = " box-shadow: 0 4px 8px rgba(21, 48, 125, 0.4); width:50%; height:20%; position:absolute;
-	              top:30%; left:30%; background-color:#15317E; border-radius:10px; display:none;" id = "timer">
+	<div style = "box-shadow: 0 4px 8px rgba(21, 48, 125, 0.4); width:50%; height:22%; position:absolute;
+	              top:30%; left:30%; background-color:#fff; border-radius:10px; display:none;" id = "timer">
 		
 		
-		<div class = "mt-4 text-light row" style = "width:100%; height:100%; text-align:center;">
+		<div class = "mt-4 row" style = "width:100%; height:100%; text-align:center; font-family: 'Roboto Mono', monospace;">
 		
 		
-			<div class = "col">
-			<h1 id = "htime">00</h1>
+			<div class = "col" style = "color:#15317E;">
+			<h1 id = "htime" class = "time">00</h1>
 			</div>
 			
-			<div class = "col">
-			<h1>:</h1>
+			<div class = "col" style = "color:#15317E;">
+			<h1 class = "time">:</h1>
 			</div>
 			
-			<div class = "col">
-			<h1 id = "mtime">00</h1>
+			<div class = "col" style = "color:#15317E;">
+			<h1 id = "mtime" class = "time">00</h1>
 			</div>
 			
-			<div class = "col">
-			<h1>:</h1>
+			<div class = "col" style = "color:#15317E;">
+			<h1 class = "time">:</h1>
 			</div>
 			
-			<div class = "col">
-			<h1 id = "stime">00</h1>
+			<div class = "col" style = "color:#15317E;">
+			<h1 id = "stime" class = "time">00</h1>
 			</div>
 			
 			
@@ -76,7 +88,7 @@
 			
 			<div class = "col">
 			
-				<form action = "user/myLogs">
+				<form action = "user/storeDetails">
 				
 				<input type = "hidden" name = "ftime" id = "ftime">
 				<button class = "btn btn-transparent btn-lg" id = "stop"><i class="bi bi-stop-fill fs-4"></i></button>
@@ -91,7 +103,7 @@
 		
 		<div>
 		
-			<a href = "" style = "text-decoration:none; color:#15317E;"><i class="bi bi-clipboard-data-fill"></i> My Logs </a>
+			<a href = "user/myLogs" style = "text-decoration:none; color:#15317E;"><i class="bi bi-clipboard-data-fill"></i> My Logs </a>
 		
 		</div>
 		
