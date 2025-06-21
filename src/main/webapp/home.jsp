@@ -103,6 +103,7 @@
 				<form action = "user/storeDetails">
 				
 				<input type = "hidden" name = "ftime" id = "ftime">
+				<input type = "hidden" name = "taskName" id = "taskName">
 				<button class = "btn btn-transparent btn-lg grow-button" id = "stop"><i class="bi bi-stop-fill fs-4"></i></button>
 				
 				</form>

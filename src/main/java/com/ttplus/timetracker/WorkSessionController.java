@@ -69,7 +69,8 @@ public class WorkSessionController extends HttpServlet {
 		private void storeDetails(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			
 			int timeDuration = Integer.parseInt(request.getParameter("ftime"));
-			//System.out.println(timeDuration);
+			String taskName = request.getParameter("taskName");
+			//System.out.println(taskName + timeDuration);
 			//response.sendRedirect ("myLogs.jsp");
 			
 		}

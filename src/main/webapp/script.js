@@ -1,6 +1,7 @@
 
 let interval = null;
 let timeInSec = 0;
+let TaskName = '';
 
 let nameDiv = document.getElementById("uName");
 let taskDiv = document.getElementById("task");
@@ -12,6 +13,7 @@ let finalTime = document.getElementById("ftime");
 
 let nameElement = document.getElementById("vName");
 let taskElement = document.getElementById("vTask");
+let taskName = document.getElementById("taskName");
 
 let startBtn = document.getElementById("start");
 let pauseBtn = document.getElementById("pause");
@@ -33,7 +35,7 @@ let stopBtn = document.getElementById("stop");
 
 
 function showTimer() {
-	console.log("error_21_6");
+	
 	//check task name is null before showing the timer
 	if(taskElement.value.trim() === ""){
 			
@@ -41,9 +43,18 @@ function showTimer() {
 			return;
 			
 		}
-				
-  taskDiv.style.display = "none";
-  timerDiv.style.display = "block";
+		
+	 storeTaskName(taskElement.value);	
+	 			
+	 taskDiv.style.display = "none";
+	 timerDiv.style.display = "block";
+}
+
+function storeTaskName(TaskName){
+	
+	TaskName = sessionStorage.setItem("TaskName", TaskName);
+	console.log(sessionStorage.getItem("TaskName"));
+	
 }
 
 function timer(){
@@ -88,8 +99,15 @@ function stopTimer(){
 	pauseTimer();
 	
 	//sendDetails();
-	console.log("::" + interval);
+	//console.log("::" + interval);
 	finalTime.value = timeInSec;
+	
+	//There are two variables, "TaskName"" and "taskName"
+	//taskName is declared in line 15, TaskName is declared in line 4
+	const TaskName = sessionStorage.getItem("TaskName");
+	taskName.value = TaskName;
+	
+	
 	timeInSec = 0;
 }
 
