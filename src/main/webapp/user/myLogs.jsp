@@ -21,32 +21,33 @@
             width: 80%;
             margin-top:10px;
             margin-bottom:10px;
-            background:#background:linear-gradient(70deg, #dbeafe, #ffffff);
+            background-color:#4a4f55;
             padding: 20px;
             border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(21, 48, 125, 0.4);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+
         }
         
     </style>
  
 
 </head>
-<body style = "background-color:#dbeafe;">
+<body style = "background-color:#fff;">
 
 <main class = "">
-	<div style = "background-color:#fff; min-height: 600px; margin:45px 45px 45px 45px; border-radius:10px;">
+	<div style = "background-color:#161d25; min-height: 600px; margin:45px 45px 45px 45px; border-radius:10px;">
 	
 		<div>
 		
 			<ul class="nav nav-tabs">
 			  <li class="nav-item">
-			    <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-x-lg"></i></a>
+			    <a class="nav-link active" style = "background-color:#161d25;" aria-current="page" href="#"><i class="bi bi-x-lg text-light"></i></a>
 			  </li>
 			  <li class="nav-item">
-			    <a class="nav-link" href="#" style = "color:#15307d;">My Logs</a>
+			    <a class="nav-link" href="#" style = "color:#fff;">My Logs</a>
 			  </li>
 			  <li class="nav-item">
-			    <a class="nav-link" href="#" style = "color:#15307d;">Settings</a>
+			    <a class="nav-link" href="#" style = "color:#fff;">Settings</a>
 			  </li>
 			  
 			</ul>
@@ -55,7 +56,7 @@
 	
 					<div class = "row">
 			
-						<div class = "col"  style = "margin:50px; color:#15307d;">
+						<div class = "col"  style = "margin:50px; color:#fff;">
 						
 						<h1 style = "font-weight: bold;">TT+</h1>
 						<h6>Track Time, Plus Productivity</h6>
@@ -65,16 +66,16 @@
 					<div class = "col">
 					
 						<div style = "margin:10px; font-weight: bold;">
-							<h5 style = "font-weight: bold; color:#15307d;">All Tasks</h5>
+							<h5 style = "font-weight: bold; color:#fff;">All Tasks</h5>
 						</div>
 						
 						<c:forEach var="tasklist" items="${tasklist}"> 
 	
 	    				<div class="taskBox">
 	        
-	         			<h6 style = "color:#106cff;"><c:out value="${tasklist.taskName}"></c:out></h6>
-	            		<h6>Time duration: <c:out value="${tasklist.timeDuration }"></c:out></h6>
-			            <h6>Date : <c:out value="${tasklist.date }"></c:out></h6>
+	         			<h6 style = "color:#fff;"><c:out value="${tasklist.taskName}"></c:out></h6>
+	            		<h6 style = "color:#fff;">Time duration: <c:out value="${tasklist.timeDuration }"></c:out></h6>
+			            <h6 style = "color:#161d25;">Date : <c:out value="${tasklist.date }"></c:out></h6>
 			            <h6 style = "display: none;">id : <c:out value="${tasklist.id}"></c:out></h6>
 			                 
 						<a href="deleteTask?id=<c:out value='${tasklist.id}'/>" style = "text-decoration:none;"> <i class="bi bi-trash-fill text-danger"></i></a>

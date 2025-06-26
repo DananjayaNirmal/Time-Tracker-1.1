@@ -85,44 +85,45 @@
 <body>
 
 <!--div style="background:linear-gradient(#08001f, #30197d); width:100%; min-height:100vh;"-->
-<div style="background:linear-gradient(70deg, #dbeafe, #ffffff); width:100%; min-height:100vh;">
+<div style="background:linear-gradient(70deg, #161d25, #161d25); width:100%; min-height:100vh;">
 
 
 	<div class = "mt-4" style = "width:40%; position:absolute; top:30%; left:30%; display:block;" id = "task">
 	
-		<h5 style = "color: #15317E;">Give your task a name to begin tracking</h5><br>
+		<h5 style = "color:#fff; font-weight:bold;">Give your task a name to begin tracking</h5><br>
 		<!--form action = "user/storeDetails"-->
-		<input class = "mx-auto" type="text" id = "vTask" style = " box-shadow: 0 4px 8px rgba(21, 48, 125, 0.4); border:none; outline:none; width:80%; height: 40px; border-radius:10px; background-color:#fff; color:#15317E;">
-		<button class = "btn btn-transparent btn-lg text-light" onclick = "showTimer()"><i class="bi bi-arrow-right-circle text-secondary"></i></button>
+		<input class = "mx-auto" type="text" id = "vTask" style = " box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5); border:none; outline:none; width:80%; height: 40px; border-radius:10px; background-color:#4a4f55; color:#fff; font-weight:bold;">
+		<button class = "btn btn-transparent btn-lg text-light" onclick = "showTimer()"><i class="bi bi-arrow-right-circle text-secondary fs-2"></i></button>
 		<!--/form-->
 		
 	</div>
 		
 		
-	<div style = "box-shadow: 0 4px 8px rgba(21, 48, 125, 0.4); width:50%; height:22%; position:absolute;
-	              top:30%; left:30%; background-color:#fff; border-radius:10px; display:none;" id = "timer">
+	<div style = " box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+	
+	width:50%; height:22%; position:absolute; top:30%; left:30%; border-radius:10px; display:none;" id = "timer">
 		
 		
 		<div class = "mt-4 row" style = "width:100%; height:100%; text-align:center; font-family: 'Roboto Mono', monospace;">
 		
 		
-			<div class = "col" style = "color:#15317E;">
+			<div class = "col" style = "color:#fff;">
 			<h1 id = "htime" class = "time">00</h1>
 			</div>
 			
-			<div class = "col" style = "color:#15317E;">
+			<div class = "col" style = "color:#fff;">
 			<h1 class = "time">:</h1>
 			</div>
 			
-			<div class = "col" style = "color:#15317E;">
+			<div class = "col" style = "color:#fff;">
 			<h1 id = "mtime" class = "time">00</h1>
 			</div>
 			
-			<div class = "col" style = "color:#15317E;">
+			<div class = "col" style = "color:#fff;">
 			<h1 class = "time">:</h1>
 			</div>
 			
-			<div class = "col" style = "color:#15317E;">
+			<div class = "col" style = "color:#fff;">
 			<h1 id = "stime" class = "time">00</h1>
 			</div>
 			
@@ -134,13 +135,13 @@
 		
 			<div class = "col">
 			
-			<button class = "btn btn-lg grow-button " style = "background-color:transparent;" id = "start"><i class="bi bi-play-fill fs-4"></i></button>
+			<button class = "btn btn-lg grow-button " style = "background-color:transparent;" id = "start"><i class="bi bi-play-fill fs-4 text-light"></i></button>
 			
 			</div>
 			
 			<div class = "col">
 			
-			<button class = "btn btn-transparent btn-lg grow-button" id = "pause" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pause-fill fs-4"></i></button>
+			<button class = "btn btn-transparent btn-lg grow-button" id = "pause" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pause-fill fs-4 text-light"></i></button>
 			
 			</div>
 			
@@ -151,7 +152,7 @@
 				<input type = "hidden" name = "ftime" id = "ftime">
 				<input type = "hidden" name = "taskName" id = "taskName">
 				<input type = "hidden" name = "coffeeCount" id = "coffeeCount">
-				<button class = "btn btn-transparent btn-lg grow-button" id = "stop"><i class="bi bi-stop-fill fs-4"></i></button>
+				<button class = "btn btn-transparent btn-lg grow-button" id = "stop"><i class="bi bi-stop-fill fs-4 text-light"></i></button>
 				
 				</form>
 				
@@ -199,7 +200,7 @@
 		
 		<div>
 		
-			<a href = "user/myLogs" style = "text-decoration:none; color:#15317E;"><i class="bi bi-clipboard-data-fill"></i> My Logs </a>
+			<a href = "user/myLogs" style = "text-decoration:none; color:#4a4f55;"><i class="bi bi-clipboard-data-fill"></i> My Logs </a>
 		
 		</div>
 		
