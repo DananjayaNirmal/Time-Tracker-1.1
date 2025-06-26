@@ -1,6 +1,8 @@
 package com.ttplus.timetracker;
 
 import java.io.IOException;
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 @WebServlet(urlPatterns = {"/user/storeDetails", "/user/myLogs", "/user/deleteTask"})
@@ -70,8 +73,19 @@ public class WorkSessionController extends HttpServlet {
 			
 			int timeDuration = Integer.parseInt(request.getParameter("ftime"));
 			String taskName = request.getParameter("taskName");
-			//System.out.println(taskName + timeDuration);
-			//response.sendRedirect ("myLogs.jsp");
+			int coffeeCount = Integer.parseInt(request.getParameter("coffeeCount"));
+			System.out.println(taskName + timeDuration + "coffeeCount:" + coffeeCount);
+			LocalDate today = LocalDate.now();
+			String date = Date.valueOf(today).toString();
+			//String selectedOption = request.getParameter("selectedOption");
+			
+			/*HttpSession session = request.getSession();
+			session.setAttribute("selectedOption", selectedOption);*/
+			
+			//System.out.println(coffeeCount);)
+			WorkSession ws = new WorkSession(timeDuration, date, coffeeCount, taskName);
+			dao.insertDetails(ws);
+			response.sendRedirect ("myLogs");
 			
 		}
 		

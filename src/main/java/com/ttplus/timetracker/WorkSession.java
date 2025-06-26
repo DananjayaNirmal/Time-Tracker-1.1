@@ -20,6 +20,17 @@ public class WorkSession {
 	}
 
 
+	public WorkSession(int timeDuration, String date, int coffeeCount, String taskName) {
+		super();
+		this.timeDuration = timeDuration;
+		this.date = date;
+		this.coffeeCount = coffeeCount;
+		this.taskName = taskName;
+	}
+
+
+
+
 	@Override
 	public String toString() {
 		return "WorkSession [id=" + id + ", timeDuration=" + timeDuration + ", date=" + date + ", coffeeCount="

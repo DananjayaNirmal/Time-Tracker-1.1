@@ -2,6 +2,10 @@
 let interval = null;
 let timeInSec = 0;
 let TaskName = '';
+//let coffeeCount = sessionStorage.getItem('coffeeCount') || 0;
+//let coffeeCount = parseInt(sessionStorage.getItem('coffeeCount')) || 0;
+
+//let CoffeeCount = 0;
 
 let nameDiv = document.getElementById("uName");
 let taskDiv = document.getElementById("task");
@@ -14,10 +18,15 @@ let finalTime = document.getElementById("ftime");
 let nameElement = document.getElementById("vName");
 let taskElement = document.getElementById("vTask");
 let taskName = document.getElementById("taskName");
+let coffeeCount = document.getElementById("coffeeCount");
 
 let startBtn = document.getElementById("start");
 let pauseBtn = document.getElementById("pause");
 let stopBtn = document.getElementById("stop");
+
+let modal = document.getElementById("myModal");
+let closeBtn = document.getElementById("count");
+//let closeBtn = document.getElementById("selectedOption");
 
 /*function showTaskName() {
 	
@@ -80,6 +89,9 @@ function timer(){
 startBtn.addEventListener("click", startTimer); 
 pauseBtn.addEventListener("click", pauseTimer);
 stopBtn.addEventListener("click", stopTimer);
+//closeBtn.addEventListener("click", findCoffeeCount);
+
+//document.getElementById("count").addEventListener("click", closeModal);
 
 function startTimer(){
 	
@@ -91,13 +103,60 @@ function startTimer(){
 function pauseTimer(){
 	
 	clearInterval(interval);
-	
+	showModal();
+	//console.log(coffeeCount);
 }
+
+function showModal(){
+	
+	modal.style.display = "block";
+		
+}
+
+/*function closeModal(){
+	
+	modal.style.display = "block";
+		
+}*/
+closeBtn.addEventListener("click", function() {
+    modal.style.display = "none";
+    clickCounter();
+});
+
+/*function findCoffeeCount(){
+	
+	const selectedReason = document.querySelector('input[name="pauseReason"]:checked');
+		if (selectedReason && selectedReason.value === "coffeetime") {
+			coffeeCount++;
+			sessionStorage.setItem('coffeeCount', coffeeCount);
+			console.log("Coffee count increased:", coffeeCount);
+		} else {
+			console.log("fail to cal");
+		}
+		
+		//closeModal();
+}*/
+
+/*function closeModal(){
+	
+	document.getElementById('selectedOption').addEventListener('click', function () {
+	const modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
+	modal.hide();
+	});
+	
+}*/
+
+/*function getCoffeeCount(){
+	
+	coffeetime = sessionStorage.setItem("TaskName", TaskName);
+	console.log(sessionStorage.getItem("TaskName"));
+		
+	
+}*/
 
 function stopTimer(){
 	
 	pauseTimer();
-	
 	//sendDetails();
 	//console.log("::" + interval);
 	finalTime.value = timeInSec;
@@ -105,8 +164,10 @@ function stopTimer(){
 	//There are two variables, "TaskName"" and "taskName"
 	//taskName is declared in line 15, TaskName is declared in line 4
 	const TaskName = sessionStorage.getItem("TaskName");
-	taskName.value = TaskName;
+	const CoffeeCount = sessionStorage.clickcount;
 	
+	taskName.value = TaskName;
+	coffeeCount.value = CoffeeCount;
 	
 	timeInSec = 0;
 }
@@ -124,4 +185,35 @@ function stopTimer(){
         console.log("Response from servlet:", data);
     });
 }*/
+
+/*let closeBtn = document.getElementById("count");*/
+/*closeModal.addEventListener("click", clickCounter);*/
+
+function clickCounter() {
+	
+  const pauseReason = document.forms["modalForm"]["pauseReason"].value;	
+  console.log("pause reason" + pauseReason);
+  if(pauseReason === "coffeetime"){
+	console.log("pause reason is " + pauseReason);
+	if (sessionStorage.clickcount) {
+	    sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+	  } else {
+	    sessionStorage.clickcount = 1;
+	    }
+	
+  } else{
+	
+	console.log("not selected 'coffe count' option");	
+	
+  }
+  
+  console.log("coffee count is" +sessionStorage.clickcount);
+	
+  /*if (sessionStorage.clickcount) {
+    sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+  } else {
+    sessionStorage.clickcount = 1;
+    }
+  console.log(sessionStorage.clickcount);*/
+}
 

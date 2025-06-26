@@ -32,6 +32,52 @@
       
 	     transition: transform 0.2s ease, background-color 0.2s ease;
     }
+    
+    
+   
+   .modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color:#e3efff; 
+  backdrop-filter: blur(10px);
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  border: none;
+  width: 30%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+.modal-header {
+
+  background-color: #fff;
+  color: black;
+}
  
  </style>
  
@@ -94,7 +140,7 @@
 			
 			<div class = "col">
 			
-			<button class = "btn btn-transparent btn-lg grow-button" id = "pause"><i class="bi bi-pause-fill fs-4"></i></button>
+			<button class = "btn btn-transparent btn-lg grow-button" id = "pause" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pause-fill fs-4"></i></button>
 			
 			</div>
 			
@@ -104,9 +150,46 @@
 				
 				<input type = "hidden" name = "ftime" id = "ftime">
 				<input type = "hidden" name = "taskName" id = "taskName">
+				<input type = "hidden" name = "coffeeCount" id = "coffeeCount">
 				<button class = "btn btn-transparent btn-lg grow-button" id = "stop"><i class="bi bi-stop-fill fs-4"></i></button>
 				
 				</form>
+				
+				<div id="myModal" class="modal">
+
+  
+					  <div class="modal-content" style="text-align:left; padding:10px 0px 10px 30px;">
+					    <div class="modal-header">
+					      
+					      <button class = "btn btn-transparent btn-lg grow-button" id = "count"><i class="bi bi-x-lg"></i></button>
+					     
+					      <h2 class = "mx-5">Select One</h2>
+					      
+					    </div>
+					    <div>
+					      
+							<form name = "modalForm">
+							  <input type="radio" id="coffeetime" name="pauseReason" value="coffeetime">
+							  <label for="coffeetime">Coffee time</label><br>
+							
+							  <input type="radio" id="rest" name="pauseReason" value="rest">
+							  <label for="rest">Rest</label><br>
+							
+							  <input type="radio" id="phonecall" name="pauseReason" value="phonecall">
+							  <label for="phonecall">Phone Call</label><br>
+							
+							  <input type="radio" id="other" name="pauseReason" value="other">
+							  <label for="other">Other</label>
+							  
+							</form>
+
+							
+			     
+					    </div>
+					  </div>
+					
+				</div>
+				
 		
 		</div>
 		
@@ -126,6 +209,7 @@
 </div>
 
 <script src="script.js"></script>
+
  
 </body>
 </html>

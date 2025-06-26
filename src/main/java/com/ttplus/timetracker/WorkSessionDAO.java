@@ -84,6 +84,23 @@ public class WorkSessionDAO {
 		}
 		
 	}
+
+	public void insertDetails(WorkSession ws) {
+		
+		try (Connection con = dbConnection()) {
+	        String sql = "INSERT INTO userdetails(timeDuration, date, coffeeCount, taskName) VALUES"
+	        		+ " (?, ?, ?, ?)";
+	        PreparedStatement ps = con.prepareStatement(sql);
+	        ps.setInt(1, ws.getTimeDuration());
+	        ps.setString(2, ws.getDate());
+	        ps.setInt(3, ws.getCoffeeCount());
+	        ps.setString(4, ws.getTaskName());
+	        ps.executeUpdate();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+		
+	}
 }
 	
 
