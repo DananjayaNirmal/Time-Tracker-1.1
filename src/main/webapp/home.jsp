@@ -45,13 +45,13 @@
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color:#e3efff; 
+  background-color:#161d25; 
   backdrop-filter: blur(10px);
 }
 
 .modal-content {
   position: relative;
-  background-color: #fefefe;
+  background-color: #fff;
   margin: auto;
   border: none;
   width: 30%;
@@ -76,7 +76,7 @@
 .modal-header {
 
   background-color: #fff;
-  color: black;
+  color: #161d25;
 }
  
  </style>
@@ -84,8 +84,7 @@
 </head>
 <body>
 
-<!--div style="background:linear-gradient(#08001f, #30197d); width:100%; min-height:100vh;"-->
-<div style="background:linear-gradient(70deg, #161d25, #161d25); width:100%; min-height:100vh;">
+<div style="background-color:#161d25; width:100%; min-height:100vh;">
 
 
 	<div class = "mt-4" style = "width:40%; position:absolute; top:30%; left:30%; display:block;" id = "task">
@@ -159,7 +158,7 @@
 				<div id="myModal" class="modal">
 
   
-					  <div class="modal-content" style="text-align:left; padding:10px 0px 10px 30px;">
+					  <div class="modal-content" style="text-align:left; padding:10px 0px 10px 30px; color:#161d25;">
 					    <div class="modal-header">
 					      
 					      <button class = "btn btn-transparent btn-lg grow-button" id = "count"><i class="bi bi-x-lg"></i></button>
