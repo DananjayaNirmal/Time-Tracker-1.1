@@ -2,9 +2,6 @@
 let interval = null;
 let timeInSec = 0;
 let TaskName = '';
-//let coffeeCount = sessionStorage.getItem('coffeeCount') || 0;
-//let coffeeCount = parseInt(sessionStorage.getItem('coffeeCount')) || 0;
-
 //let CoffeeCount = 0;
 
 let nameDiv = document.getElementById("uName");
@@ -26,21 +23,6 @@ let stopBtn = document.getElementById("stop");
 
 let modal = document.getElementById("myModal");
 let closeBtn = document.getElementById("count");
-//let closeBtn = document.getElementById("selectedOption");
-
-/*function showTaskName() {
-	
-	//check user name is null before showing "Enter Task Name field"
-	if(nameElement.value.trim() === ""){
-		
-		nameElement.placeholder = "Please enter your name";
-		return;
-		
-	}
-	
-  nameDiv.style.displa- = "none";
-  taskDiv.style.display = "block";
-}*/
 
 
 function showTimer() {
@@ -52,6 +34,15 @@ function showTimer() {
 			return;
 			
 		}
+	
+	 const taskName = taskElement.value;			
+	 if(taskName.length <= 3 || taskName.length >= 50){
+					
+			 taskElement.placeholder = "Task Name is too long or too short";
+			 taskElement.value = "";
+			 return;
+					
+	    }	
 		
 	 storeTaskName(taskElement.value);	
 	 			
@@ -82,21 +73,17 @@ function timer(){
 	timeElementHrs.innerText = `${hours}`;
 	timeElementMin.innerText = `${minutes}`;
 	timeElementSec.innerText = `${seconds}`;
-	//console.log("dana");
 
 }
 
 startBtn.addEventListener("click", startTimer); 
 pauseBtn.addEventListener("click", pauseTimer);
 stopBtn.addEventListener("click", stopTimer);
-//closeBtn.addEventListener("click", findCoffeeCount);
-
-//document.getElementById("count").addEventListener("click", closeModal);
 
 function startTimer(){
 	
 	interval = setInterval(timer, 1000);
-	//console.log("dana dana, checking start btn is working?");
+	//console.log("checking start btn is working?");
 	
 }
 
@@ -113,52 +100,14 @@ function showModal(){
 		
 }
 
-/*function closeModal(){
-	
-	modal.style.display = "block";
-		
-}*/
 closeBtn.addEventListener("click", function() {
     modal.style.display = "none";
     clickCounter();
 });
 
-/*function findCoffeeCount(){
-	
-	const selectedReason = document.querySelector('input[name="pauseReason"]:checked');
-		if (selectedReason && selectedReason.value === "coffeetime") {
-			coffeeCount++;
-			sessionStorage.setItem('coffeeCount', coffeeCount);
-			console.log("Coffee count increased:", coffeeCount);
-		} else {
-			console.log("fail to cal");
-		}
-		
-		//closeModal();
-}*/
-
-/*function closeModal(){
-	
-	document.getElementById('selectedOption').addEventListener('click', function () {
-	const modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
-	modal.hide();
-	});
-	
-}*/
-
-/*function getCoffeeCount(){
-	
-	coffeetime = sessionStorage.setItem("TaskName", TaskName);
-	console.log(sessionStorage.getItem("TaskName"));
-		
-	
-}*/
-
 function stopTimer(){
 	
-	pauseTimer();
-	//sendDetails();
-	//console.log("::" + interval);
+	//pauseTimer();
 	finalTime.value = timeInSec;
 	
 	//There are two variables, "TaskName"" and "taskName"
@@ -172,29 +121,12 @@ function stopTimer(){
 	timeInSec = 0;
 }
 
-/*function sendDetails() {
-    fetch("/myLogs", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: "myParam=" + encodeURIComponent(interval)
-    })
-    .then(response => response.text())
-    .then(data => {
-        console.log("Response from servlet:", data);
-    });
-}*/
-
-/*let closeBtn = document.getElementById("count");*/
-/*closeModal.addEventListener("click", clickCounter);*/
-
 function clickCounter() {
 	
   const pauseReason = document.forms["modalForm"]["pauseReason"].value;	
-  console.log("pause reason" + pauseReason);
+  //console.log("pause reason" + pauseReason);
   if(pauseReason === "coffeetime"){
-	console.log("pause reason is " + pauseReason);
+	//console.log("pause reason is " + pauseReason);
 	if (sessionStorage.clickcount) {
 	    sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
 	  } else {
@@ -209,11 +141,5 @@ function clickCounter() {
   
   console.log("coffee count is" +sessionStorage.clickcount);
 	
-  /*if (sessionStorage.clickcount) {
-    sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
-  } else {
-    sessionStorage.clickcount = 1;
-    }
-  console.log(sessionStorage.clickcount);*/
 }
 
