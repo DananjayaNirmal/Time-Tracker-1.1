@@ -59,8 +59,30 @@
 						<div class = "col"  style = "margin:50px; color:#fff;">
 						
 						<h1 style = "font-weight: bold;">TT+</h1>
-						<h6>Track Time, Plus Productivity</h6>
-				
+						<!--h6>Track Time, Plus Productivity</h6-->
+						<br>
+						<h5>Daily Tips</h5>
+						<br>
+						
+						<c:forEach var="task" items="${tasklist}"> 
+						<!--check coffee count in a one specific date-->
+						<c:if test="${task.date == todayis}">
+						<c:set var="totalCoffee" value="${totalCoffee + task.coffeeCount}" />
+						</c:if>
+						</c:forEach>
+						
+						<c:if test="${totalCoffee <= 2}">
+    					<h6>Try slowing down on caffeine today for smoother focus.</h6>
+						</c:if>
+						
+						<c:if test="${totalCoffee > 3}">
+						    <h6>Coffee count is more than 10!</h6>
+						</c:if>
+						
+						<c:if test="${totalCoffee == 2}">
+						    <h6>Coffee count is...</h6>
+						</c:if>
+						
 					</div>
 				
 					<div class = "col">
@@ -74,6 +96,8 @@
 	    				<div class="taskBox">
 	        
 	         			<h6 style = "color:#fff;"><c:out value="${tasklist.taskName}"></c:out></h6>
+	         			
+	         			
 	            		<h6 style = "color:#fff;">Time duration: <c:out value="${tasklist.timeDuration }"></c:out></h6>
 			            <h6 style = "color:#161d25;">Date : <c:out value="${tasklist.date }"></c:out></h6>
 			            <h6 style = "display: none;">id : <c:out value="${tasklist.id}"></c:out></h6>

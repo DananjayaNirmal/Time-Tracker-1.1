@@ -173,10 +173,10 @@
 							  <label for="coffeetime">Coffee time</label><br>
 							
 							  <input type="radio" id="rest" name="pauseReason" value="rest">
-							  <label for="rest">Rest</label><br>
+							  <label for="rest">Take a Rest / Walk</label><br>
 							
 							  <input type="radio" id="phonecall" name="pauseReason" value="phonecall">
-							  <label for="phonecall">Phone Call</label><br>
+							  <label for="phonecall">Phone Call / Social media</label><br>
 							
 							  <input type="radio" id="other" name="pauseReason" value="other">
 							  <label for="other">Other</label>

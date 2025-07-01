@@ -51,7 +51,7 @@ public class WorkSessionDAO {
 			while(rs.next()) {
 				
 				int id = rs.getInt("id");
-				int timeDuration = rs.getInt("timeDuration");
+				String timeDuration = rs.getString("timeDuration");
 				String date = rs.getString("date");
 				int coffeeCount = rs.getInt("coffeeCount");
 				String taskName = rs.getString("taskName");
@@ -91,7 +91,7 @@ public class WorkSessionDAO {
 	        String sql = "INSERT INTO userdetails(timeDuration, date, coffeeCount, taskName) VALUES"
 	        		+ " (?, ?, ?, ?)";
 	        PreparedStatement ps = con.prepareStatement(sql);
-	        ps.setInt(1, ws.getTimeDuration());
+	        ps.setString(1, ws.getTimeDuration());
 	        ps.setString(2, ws.getDate());
 	        ps.setInt(3, ws.getCoffeeCount());
 	        ps.setString(4, ws.getTaskName());

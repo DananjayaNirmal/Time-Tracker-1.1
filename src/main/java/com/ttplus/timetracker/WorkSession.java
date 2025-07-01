@@ -4,13 +4,13 @@ package com.ttplus.timetracker;
 public class WorkSession {
 	
 	private int id;
-	private int timeDuration;
+	private String timeDuration;
 	private String date;
 	private int coffeeCount;
 	private String taskName;
 	
 
-	public WorkSession(int id, int timeDuration, String date, int coffeeCount, String taskName) {
+	public WorkSession(int id, String timeDuration, String date, int coffeeCount, String taskName) {
 		super();
 		this.id = id;
 		this.timeDuration = timeDuration;
@@ -20,7 +20,7 @@ public class WorkSession {
 	}
 
 
-	public WorkSession(int timeDuration, String date, int coffeeCount, String taskName) {
+	public WorkSession(String timeDuration, String date, int coffeeCount, String taskName) {
 		super();
 		this.timeDuration = timeDuration;
 		this.date = date;
@@ -29,14 +29,11 @@ public class WorkSession {
 	}
 
 
-
-
 	@Override
 	public String toString() {
 		return "WorkSession [id=" + id + ", timeDuration=" + timeDuration + ", date=" + date + ", coffeeCount="
 				+ coffeeCount + ", taskName=" + taskName + "]";
 	}
-
 
 
 	public String getTaskName() {
@@ -53,7 +50,7 @@ public class WorkSession {
 		return id;
 	}
 
-	public int getTimeDuration() {
+	public String getTimeDuration() {
 		return timeDuration;
 	}
 
@@ -69,7 +66,7 @@ public class WorkSession {
 		this.id = id;
 	}
 
-	public void setTimeDuration(int timeDuration) {
+	public void setTimeDuration(String timeDuration) {
 		this.timeDuration = timeDuration;
 	}
 

@@ -2,6 +2,7 @@
 let interval = null;
 let timeInSec = 0;
 let TaskName = '';
+let CoffeeCount = 0;
 //let CoffeeCount = 0;
 
 let nameDiv = document.getElementById("uName");
@@ -24,6 +25,9 @@ let stopBtn = document.getElementById("stop");
 let modal = document.getElementById("myModal");
 let closeBtn = document.getElementById("count");
 
+startBtn.addEventListener("click", startTimer); 
+pauseBtn.addEventListener("click", pauseTimer);
+stopBtn.addEventListener("click", stopTimer);
 
 function showTimer() {
 	
@@ -61,14 +65,9 @@ function timer(){
 	
 	timeInSec++;
 	
-	let hours = Math.floor(timeInSec / 3600);
-	let minutes = Math.floor((timeInSec - (hours * 3600)) / 60);
-	let seconds = timeInSec % 60;
+	covertTime();
 	
-	if (hours < 10) hours = '0' + hours;
-	if (minutes < 10) minutes = '0' + minutes;
-	if (seconds < 10) seconds = '0' + seconds;
-	
+	const { hours, minutes, seconds } = covertTime();
 	
 	timeElementHrs.innerText = `${hours}`;
 	timeElementMin.innerText = `${minutes}`;
@@ -76,9 +75,20 @@ function timer(){
 
 }
 
-startBtn.addEventListener("click", startTimer); 
-pauseBtn.addEventListener("click", pauseTimer);
-stopBtn.addEventListener("click", stopTimer);
+function covertTime(){
+	
+		let hours = Math.floor(timeInSec / 3600);
+		let minutes = Math.floor((timeInSec - (hours * 3600)) / 60);
+		let seconds = timeInSec % 60;
+		
+		if (hours < 10) hours = '0' + hours;
+		if (minutes < 10) minutes = '0' + minutes;
+		if (seconds < 10) seconds = '0' + seconds;
+		
+		return { hours, minutes, seconds };
+		
+		
+}
 
 function startTimer(){
 	
@@ -108,17 +118,23 @@ closeBtn.addEventListener("click", function() {
 function stopTimer(){
 	
 	//pauseTimer();
-	finalTime.value = timeInSec;
+	const { hours, minutes, seconds } = covertTime();
+	console.log(`${hours}:${minutes}:${seconds}`);
+	finalTime.value = `${hours}:${minutes}:${seconds}`;
+	
+	//sessionStorage.setItem('effectiveTime', 'value');
+
 	
 	//There are two variables, "TaskName"" and "taskName"
 	//taskName is declared in line 15, TaskName is declared in line 4
 	const TaskName = sessionStorage.getItem("TaskName");
-	const CoffeeCount = sessionStorage.clickcount;
+	CoffeeCount = sessionStorage.clickcount;
 	
 	taskName.value = TaskName;
 	coffeeCount.value = CoffeeCount;
 	
 	timeInSec = 0;
+	sessionStorage.clear();
 }
 
 function clickCounter() {
@@ -133,9 +149,9 @@ function clickCounter() {
 	    sessionStorage.clickcount = 1;
 	    }
 	
-  } else{
+  } else if(pauseReason === "rest"){
 	
-	console.log("not selected 'coffe count' option");	
+	
 	
   }
   

@@ -61,7 +61,32 @@ public class WorkSessionController extends HttpServlet {
 			List<WorkSession> ws = new ArrayList<>();
 			
 			ws = dao.getDetails();
-			System.out.println("XXXYYYZZZ"+ws);
+			//find the current date and pass to myLogs.jsp 
+			LocalDate today = LocalDate.now();
+			request.setAttribute("todayis", today.toString());
+			//get time duration from the list and convert
+			int totalMinutes = 0;
+
+			for (WorkSession session : ws) {
+			    String timeDuration = session.getTimeDuration(); 
+
+			    if (timeDuration != null && timeDuration.contains(":")) {
+			        String[] parts = timeDuration.split(":");
+
+			        int hours = Integer.parseInt(parts[0].trim());
+			        int minutes = Integer.parseInt(parts[1].trim());
+
+			        int sessionMinutes = hours * 60 + minutes;
+
+			        totalMinutes += sessionMinutes;
+			    }
+			}
+
+			System.out.println("Total Minutes for all sessions: " + totalMinutes);
+
+			//-----------------
+			request.setAttribute("totalMin", totalMinutes);
+			
 			request.setAttribute("tasklist", ws);
 			RequestDispatcher rd = request.getRequestDispatcher("myLogs.jsp");
 			rd.forward(request, response);
@@ -71,7 +96,7 @@ public class WorkSessionController extends HttpServlet {
 
 		private void storeDetails(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			
-			int timeDuration = Integer.parseInt(request.getParameter("ftime"));
+			String timeDuration = request.getParameter("ftime");
 			String taskName = request.getParameter("taskName");
 			int coffeeCount = Integer.parseInt(request.getParameter("coffeeCount"));
 			System.out.println(taskName + timeDuration + "coffeeCount:" + coffeeCount);
@@ -82,7 +107,7 @@ public class WorkSessionController extends HttpServlet {
 			/*HttpSession session = request.getSession();
 			session.setAttribute("selectedOption", selectedOption);*/
 			
-			//System.out.println(coffeeCount);)
+			System.out.println("check time duration" + timeDuration);
 			WorkSession ws = new WorkSession(timeDuration, date, coffeeCount, taskName);
 			dao.insertDetails(ws);
 			response.sendRedirect ("myLogs");
