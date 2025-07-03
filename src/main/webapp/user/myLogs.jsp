@@ -1,4 +1,6 @@
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -58,10 +60,10 @@
 			
 						<div class = "col"  style = "margin:50px; color:#fff;">
 						
-						<h1 style = "font-weight: bold;">TT+</h1>
+						<!--h1 style = "font-weight: bold;">TT+</h1-->
 						<!--h6>Track Time, Plus Productivity</h6-->
 						<br>
-						<h5>Daily Tips</h5>
+						<h5 style = "color:#4a4f55;">Caffeine & Time Check</h5>
 						<br>
 						
 						<c:forEach var="task" items="${tasklist}"> 
@@ -71,17 +73,50 @@
 						</c:if>
 						</c:forEach>
 						
-						<c:if test="${totalCoffee <= 2}">
-    					<h6>Try slowing down on caffeine today for smoother focus.</h6>
+						<c:if test="${totalCoffee >= 4 && totalCoffee <= 6}">
+    						<h6><i class="bi bi-cup-hot-fill"></i> Caffeine level’s pretty high—time to give your body a breather</h6>
 						</c:if>
 						
-						<c:if test="${totalCoffee > 3}">
-						    <h6>Coffee count is more than 10!</h6>
+						<c:if test="${totalCoffee >= 7}">
+						    <h6><i class="bi bi-cup-hot-fill"></i> Caffeine levels critical. Hydration might be your next best friend.</h6>
+						</c:if>
+						
+						<c:if test="${totalCoffee < 3}">
+						    <h6 class="p-3 mb-2 bg-success-subtle text-success-emphasis"><i class="bi bi-cup-hot-fill"></i> You're in the light caffeine zone—focus should feel smooth</h6>
 						</c:if>
 						
 						<c:if test="${totalCoffee == 2}">
 						    <h6>Coffee count is...</h6>
 						</c:if>
+						
+						<c:set var="minutes" value="${totalMin % 60}" />
+						<c:set var="hours" value="${totalMin / 60}" />
+						
+						<c:if test="${totalMin >= 60 && totalMin <= 420}">
+						    <p><i class="bi bi-stopwatch-fill"></i> You have worked for more than 
+						    <fmt:formatNumber value="${hours}" type="number" maxFractionDigits="0" /> hours. keep it up!
+						    </p>
+						</c:if>
+						
+						<c:if test="${totalMin > 420}">
+						    <p><i class="bi bi-stopwatch-fill"></i> You have worked for more than 
+						    <fmt:formatNumber value="${hours}" type="number" maxFractionDigits="0" /> hours. Remember to take breaks!
+						    </p>
+						</c:if>
+						
+						<c:if test="${totalMin < 60 && totalMin > 0}">
+						    <p><i class="bi bi-stopwatch-fill"></i> You have worked for 
+						    <fmt:formatNumber value="${minutes}" type="number" maxFractionDigits="0" /> hours. keep it up!
+						    </p>
+					   
+						</c:if>
+						
+						<c:if test="${totalMin == 0}">
+						    <p>Let’s get started—your day awaits!</p>
+						</c:if>
+						
+						
+						
 						
 					</div>
 				
