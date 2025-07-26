@@ -98,8 +98,6 @@ public class WorkSessionController extends HttpServlet {
 			
 			String timeDuration = request.getParameter("ftime");
 			String taskName = request.getParameter("taskName");
-			int coffeeCount = Integer.parseInt(request.getParameter("coffeeCount"));
-			System.out.println(taskName + timeDuration + "coffeeCount:" + coffeeCount);
 			LocalDate today = LocalDate.now();
 			String date = Date.valueOf(today).toString();
 			//String selectedOption = request.getParameter("selectedOption");
@@ -107,8 +105,10 @@ public class WorkSessionController extends HttpServlet {
 			/*HttpSession session = request.getSession();
 			session.setAttribute("selectedOption", selectedOption);*/
 			
+			
+			
 			System.out.println("check time duration" + timeDuration);
-			WorkSession ws = new WorkSession(timeDuration, date, coffeeCount, taskName);
+			WorkSession ws = new WorkSession(timeDuration, date, taskName);
 			dao.insertDetails(ws);
 			response.sendRedirect ("myLogs");
 			

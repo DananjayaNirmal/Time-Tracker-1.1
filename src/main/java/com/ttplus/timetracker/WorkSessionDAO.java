@@ -53,10 +53,9 @@ public class WorkSessionDAO {
 				int id = rs.getInt("id");
 				String timeDuration = rs.getString("timeDuration");
 				String date = rs.getString("date");
-				int coffeeCount = rs.getInt("coffeeCount");
 				String taskName = rs.getString("taskName");
 				
-				ws.add(new WorkSession(id, timeDuration, date, coffeeCount, taskName));
+				ws.add(new WorkSession(id, timeDuration, date, taskName));
 			}
 			
 		}catch(Exception e){
@@ -88,13 +87,12 @@ public class WorkSessionDAO {
 	public void insertDetails(WorkSession ws) {
 		
 		try (Connection con = dbConnection()) {
-	        String sql = "INSERT INTO userdetails(timeDuration, date, coffeeCount, taskName) VALUES"
-	        		+ " (?, ?, ?, ?)";
+	        String sql = "INSERT INTO userdetails(timeDuration, date, taskName) VALUES"
+	        		+ " (?, ?, ?)";
 	        PreparedStatement ps = con.prepareStatement(sql);
 	        ps.setString(1, ws.getTimeDuration());
 	        ps.setString(2, ws.getDate());
-	        ps.setInt(3, ws.getCoffeeCount());
-	        ps.setString(4, ws.getTaskName());
+	        ps.setString(3, ws.getTaskName());
 	        ps.executeUpdate();
 	    } catch (Exception e) {
 	        e.printStackTrace();

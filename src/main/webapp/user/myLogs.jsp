@@ -60,65 +60,9 @@
 			
 						<div class = "col"  style = "margin:50px; color:#fff;">
 						
-						<!--h1 style = "font-weight: bold;">TT+</h1-->
-						<!--h6>Track Time, Plus Productivity</h6-->
-						<br>
-						<h5 style = "color:#4a4f55;">Caffeine & Time Check</h5>
-						<br>
+						<h1><a><i class="bi bi-plus-square-fill"> New Task </i></a></h1>
 						
-						<c:forEach var="task" items="${tasklist}"> 
-						<!--check coffee count in a one specific date-->
-						<c:if test="${task.date == todayis}">
-						<c:set var="totalCoffee" value="${totalCoffee + task.coffeeCount}" />
-						</c:if>
-						</c:forEach>
-						
-						<c:if test="${totalCoffee >= 4 && totalCoffee <= 6}">
-    						<h6><i class="bi bi-cup-hot-fill"></i> Caffeine level’s pretty high—time to give your body a breather</h6>
-						</c:if>
-						
-						<c:if test="${totalCoffee >= 7}">
-						    <h6><i class="bi bi-cup-hot-fill"></i> Caffeine levels critical. Hydration might be your next best friend.</h6>
-						</c:if>
-						
-						<c:if test="${totalCoffee < 3}">
-						    <h6 class="p-3 mb-2 bg-success-subtle text-success-emphasis"><i class="bi bi-cup-hot-fill"></i> You're in the light caffeine zone—focus should feel smooth</h6>
-						</c:if>
-						
-						<c:if test="${totalCoffee == 2}">
-						    <h6>Coffee count is...</h6>
-						</c:if>
-						
-						<c:set var="minutes" value="${totalMin % 60}" />
-						<c:set var="hours" value="${totalMin / 60}" />
-						
-						<c:if test="${totalMin >= 60 && totalMin <= 420}">
-						    <p><i class="bi bi-stopwatch-fill"></i> You have worked for more than 
-						    <fmt:formatNumber value="${hours}" type="number" maxFractionDigits="0" /> hours. keep it up!
-						    </p>
-						</c:if>
-						
-						<c:if test="${totalMin > 420}">
-						    <p><i class="bi bi-stopwatch-fill"></i> You have worked for more than 
-						    <fmt:formatNumber value="${hours}" type="number" maxFractionDigits="0" /> hours. Remember to take breaks!
-						    </p>
-						</c:if>
-						
-						<c:if test="${totalMin < 60 && totalMin > 0}">
-						    <p><i class="bi bi-stopwatch-fill"></i> You have worked for 
-						    <fmt:formatNumber value="${minutes}" type="number" maxFractionDigits="0" /> hours. keep it up!
-						    </p>
-					   
-						</c:if>
-						
-						<c:if test="${totalMin == 0}">
-						    <p>Let’s get started—your day awaits!</p>
-						</c:if>
-						
-						
-						
-						
-					</div>
+						</div>
 				
 					<div class = "col">
 					
