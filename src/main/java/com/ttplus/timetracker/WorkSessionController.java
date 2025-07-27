@@ -50,7 +50,6 @@ public class WorkSessionController extends HttpServlet {
 			int id = Integer.parseInt(request.getParameter("id"));
 			
 			dao.deleteTask(id);
-				
 			response.sendRedirect ("myLogs");
 			
 		}
@@ -61,10 +60,8 @@ public class WorkSessionController extends HttpServlet {
 			List<WorkSession> ws = new ArrayList<>();
 			
 			ws = dao.getDetails();
-			//find the current date and pass to myLogs.jsp 
 			LocalDate today = LocalDate.now();
 			request.setAttribute("todayis", today.toString());
-			//get time duration from the list and convert
 			int totalMinutes = 0;
 
 			for (WorkSession session : ws) {
@@ -75,18 +72,13 @@ public class WorkSessionController extends HttpServlet {
 
 			        int hours = Integer.parseInt(parts[0].trim());
 			        int minutes = Integer.parseInt(parts[1].trim());
-
 			        int sessionMinutes = hours * 60 + minutes;
 
 			        totalMinutes += sessionMinutes;
 			    }
 			}
 
-			System.out.println("Total Minutes for all sessions: " + totalMinutes);
-
-			//-----------------
 			request.setAttribute("totalMin", totalMinutes);
-			
 			request.setAttribute("tasklist", ws);
 			RequestDispatcher rd = request.getRequestDispatcher("myLogs.jsp");
 			rd.forward(request, response);
@@ -100,14 +92,7 @@ public class WorkSessionController extends HttpServlet {
 			String taskName = request.getParameter("taskName");
 			LocalDate today = LocalDate.now();
 			String date = Date.valueOf(today).toString();
-			//String selectedOption = request.getParameter("selectedOption");
-			
-			/*HttpSession session = request.getSession();
-			session.setAttribute("selectedOption", selectedOption);*/
-			
-			
-			
-			System.out.println("check time duration" + timeDuration);
+	
 			WorkSession ws = new WorkSession(timeDuration, date, taskName);
 			dao.insertDetails(ws);
 			response.sendRedirect ("myLogs");

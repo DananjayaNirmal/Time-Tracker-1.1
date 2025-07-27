@@ -43,7 +43,7 @@
 		
 			<ul class="nav nav-tabs">
 			  <li class="nav-item">
-			    <a class="nav-link active" style = "background-color:#161d25;" aria-current="page" href="#"><i class="bi bi-x-lg text-light"></i></a>
+			    <a class="nav-link active" style = "background-color:#161d25;" aria-current="page" href="../home.jsp"><i class="bi bi-x-lg text-light"></i></a>
 			  </li>
 			  <li class="nav-item">
 			    <a class="nav-link" href="#" style = "color:#fff;">My Logs</a>
@@ -60,7 +60,8 @@
 			
 						<div class = "col"  style = "margin:50px; color:#fff;">
 						
-						<h1><a><i class="bi bi-plus-square-fill"> New Task </i></a></h1>
+						<h1>TT <i class="bi bi-plus"></i></h1>
+						<h6>Track time, Boost productivity</h6>
 						
 						</div>
 				

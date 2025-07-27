@@ -2,8 +2,6 @@
 let interval = null;
 let timeInSec = 0;
 let TaskName = '';
-//let CoffeeCount = 0;
-//let CoffeeCount = 0;
 
 let nameDiv = document.getElementById("uName");
 let taskDiv = document.getElementById("task");
@@ -16,7 +14,6 @@ let finalTime = document.getElementById("ftime");
 let nameElement = document.getElementById("vName");
 let taskElement = document.getElementById("vTask");
 let taskName = document.getElementById("taskName");
-//let coffeeCount = document.getElementById("coffeeCount");
 
 let startBtn = document.getElementById("start");
 let pauseBtn = document.getElementById("pause");
@@ -31,7 +28,6 @@ stopBtn.addEventListener("click", stopTimer);
 
 function showTimer() {
 	
-	//check task name is null before showing the timer
 	if(taskElement.value.trim() === ""){
 			
 			taskElement.placeholder = "This cannot be empty";
@@ -92,71 +88,34 @@ function convertTime(){
 
 function startTimer(){
 	
+	startBtn.disabled = true;
+	pauseBtn.disabled = false;
+	
 	interval = setInterval(timer, 1000);
-	//console.log("checking start btn is working?");
 	
 }
 
 function pauseTimer(){
 	
-	clearInterval(interval);
-	//showModal();
-	//console.log(coffeeCount);
-}
-
-/*function showModal(){
+	pauseBtn.disabled = true;
+	startBtn.disabled = false;
 	
-	modal.style.display = "block";
-		
+	clearInterval(interval);
+	
 }
 
-closeBtn.addEventListener("click", function() {
-    modal.style.display = "none";
-    clickCounter();
-});*/
 
 function stopTimer(){
 	
-	//pauseTimer();
 	const { hours, minutes, seconds } = convertTime();
 	console.log(`${hours}:${minutes}:${seconds}`);
 	finalTime.value = `${hours}:${minutes}:${seconds}`;
 	console.log(finalTime.value);
-	
-	//sessionStorage.setItem('effectiveTime', 'value');
 
-	
-	//There are two variables, "TaskName"" and "taskName"
-	//taskName is declared in line 15, TaskName is declared in line 4
 	const TaskName = sessionStorage.getItem("TaskName");
-	//CoffeeCount = sessionStorage.clickcount;
 	
 	taskName.value = TaskName;
-	//coffeeCount.value = CoffeeCount;
 	
 	timeInSec = 0;
 	sessionStorage.clear();
 }
-
-/*function clickCounter() {
-	
-  const pauseReason = document.forms["modalForm"]["pauseReason"].value;	
-  //console.log("pause reason" + pauseReason);
-  if(pauseReason === "coffeetime"){
-	//console.log("pause reason is " + pauseReason);
-	if (sessionStorage.clickcount) {
-	    sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
-	  } else {
-	    sessionStorage.clickcount = 1;
-	    }
-	
-  } else if(pauseReason === "rest"){
-	
-	
-	
-  }
-  
-  console.log("coffee count is" +sessionStorage.clickcount);
-	
-}*/
-

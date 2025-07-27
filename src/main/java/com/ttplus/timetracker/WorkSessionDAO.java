@@ -71,6 +71,7 @@ public class WorkSessionDAO {
 		
 		try {
 			Connection con = dbConnection();
+			
 			String query = "Delete From userdetails Where id = ?";
 			PreparedStatement ps = con.prepareStatement(query);
 			
@@ -90,10 +91,12 @@ public class WorkSessionDAO {
 	        String sql = "INSERT INTO userdetails(timeDuration, date, taskName) VALUES"
 	        		+ " (?, ?, ?)";
 	        PreparedStatement ps = con.prepareStatement(sql);
+	        
 	        ps.setString(1, ws.getTimeDuration());
 	        ps.setString(2, ws.getDate());
 	        ps.setString(3, ws.getTaskName());
 	        ps.executeUpdate();
+	        
 	    } catch (Exception e) {
 	        e.printStackTrace();
 	    }

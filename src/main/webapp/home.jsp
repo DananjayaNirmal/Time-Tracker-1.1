@@ -89,7 +89,7 @@
 
 	<div class = "mt-4" style = "width:40%; position:absolute; top:30%; left:30%; display:block;" id = "task">
 	
-		<h5 style = "color:#fff; font-weight:bold;">Give your task a name to begin tracking</h5><br>
+		<h5 style = "color:#6b6576; font-weight:bold;">Give your task a name to begin tracking</h5><br>
 		<!--form action = "user/storeDetails"-->
 		<input class = "mx-auto" type="text" id = "vTask" style = " box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5); border:none; outline:none; width:80%; height: 40px; border-radius:10px; background-color:#161d25; color:#fff; font-weight:bold;">
 		<button class = "btn btn-transparent btn-lg text-light" onclick = "showTimer()"><i class="bi bi-arrow-right-circle text-secondary fs-2"></i></button>
@@ -134,13 +134,13 @@
 		
 			<div class = "col">
 			
-			<button class = "btn btn-lg grow-button " id = "start"><i class="bi bi-play-fill fs-4 text-dark" ></i></button>
+			<button class = "btn btn-lg grow-button " id = "start" type="button"><i class="bi bi-play-fill fs-4 text-dark" ></i></button>
 			
 			</div>
 			
 			<div class = "col">
 			
-			<button class = "btn btn-lg grow-button" id = "pause" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pause-fill fs-4 text-dark"></i></button>
+			<button class = "btn btn-lg grow-button" id = "pause" type="button"><i class="bi bi-pause-fill fs-4 text-dark"></i></button>
 			
 			</div>
 			
@@ -154,41 +154,6 @@
 				<button class = "btn btn-lg grow-button" id = "stop"><i class="bi bi-stop-fill fs-4 text-dark"></i></button>
 				
 				</form>
-				
-				<!--div id="myModal" class="modal">
-
-  
-					  <div class="modal-content" style="text-align:left; padding:10px 0px 10px 30px; color:#161d25;">
-					    <div class="modal-header">
-					      
-					      <button class = "btn btn-transparent btn-lg grow-button" id = "count"><i class="bi bi-x-lg"></i></button>
-					     
-					      <h2 class = "mx-5">Select One</h2>
-					      
-					    </div>
-					    <div>
-					      
-							<form name = "modalForm">
-							  <input type="radio" id="coffeetime" name="pauseReason" value="coffeetime">
-							  <label for="coffeetime">Coffee time</label><br>
-							
-							  <input type="radio" id="rest" name="pauseReason" value="rest">
-							  <label for="rest">Take a Rest / Walk</label><br>
-							
-							  <input type="radio" id="phonecall" name="pauseReason" value="phonecall">
-							  <label for="phonecall">Phone Call / Social media</label><br>
-							
-							  <input type="radio" id="other" name="pauseReason" value="other">
-							  <label for="other">Other</label>
-							  
-							</form>
-
-							
-			     
-					    </div>
-					  </div>
-					
-				</div-->
 				
 		
 		</div>
