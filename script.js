@@ -3,7 +3,7 @@ if (!window.timerScriptLoaded) {
 
 	let interval = null;
 	let timeInSec = 0;
-	let TaskName = '';
+	let TaskName = "";
 
 	let nameDiv = document.getElementById("uName");
 	let taskDiv = document.getElementById("task");
@@ -26,11 +26,7 @@ if (!window.timerScriptLoaded) {
 
 	startBtn.addEventListener("click", startTimer); 
 	pauseBtn.addEventListener("click", pauseTimer);
-	//stopBtn.addEventListener("click", stopTimer);
-	stopBtn.addEventListener("click", function(e) {
-		stopTimer(e);
-	});
-
+	stopBtn.addEventListener("click", stopTimer);
 
 	function showTimer() {
 		
@@ -97,6 +93,7 @@ if (!window.timerScriptLoaded) {
 		if (interval) {
 			        return;
 			    }
+
 		interval = setInterval(timer, 1000);
 		
 	}
@@ -109,22 +106,35 @@ if (!window.timerScriptLoaded) {
 	}
 
 
-	function stopTimer(event){
-		
-		event.preventDefault();
-		const { hours, minutes, seconds } = convertTime();
-		console.log(`${hours}:${minutes}:${seconds}`);
-		finalTime.value = `${hours}:${minutes}:${seconds}`;
-		console.log(finalTime.value);
+	function stopTimer(){
 
-		const TaskName = sessionStorage.getItem("TaskName");
-		
-		taskName.value = TaskName;
-		
-		clearInterval(interval);
-		interval = null;
-		timeInSec = 0;
-		sessionStorage.clear();
-	}
+    const { hours, minutes, seconds } = convertTime();
+    const formattedTime = `${hours}:${minutes}:${seconds}`;
+
+    const taskName = sessionStorage.getItem("TaskName") || "Unnamed Task";
+
+	const today = new Date();
+	const date = today.toLocaleDateString(); 
+	
+    const taskEntry = {
+	id: Date.now(),
+    task: taskName,
+    time: formattedTime,
+	date : date
+};
+
+    let taskLogs = JSON.parse(localStorage.getItem("taskLogs")) || [];
+
+    taskLogs.push(taskEntry);
+
+    localStorage.setItem("taskLogs", JSON.stringify(taskLogs));
+
+    clearInterval(interval);
+    interval = null;
+    timeInSec = 0;
+    sessionStorage.clear();
+	window.location.replace("./logs.html");
+
+}
 
 }
